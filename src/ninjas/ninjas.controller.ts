@@ -3,9 +3,6 @@ import { CreateNinjaDto } from './dto/create-ninja.dto';
 import { UpdateNinjaDto } from './dto/update-ninja.dto';
 import { NinjasService } from './ninjas.service';
 
-// const service = new NinjasService();
-// const controller = new NinjasController(service);
-
 @Controller('ninjas')
 export class NinjasController {
     constructor(private readonly ninjasService: NinjasService) {}
