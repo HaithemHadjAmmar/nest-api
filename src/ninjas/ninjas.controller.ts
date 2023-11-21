@@ -44,6 +44,6 @@ removeNinja(
     @Param('id') id: string
 ) {
    return this.ninjasService.removeNinja(+id);
-}
+  }
 
 }
