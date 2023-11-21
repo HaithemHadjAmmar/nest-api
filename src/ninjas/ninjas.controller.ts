@@ -22,37 +22,28 @@ getNinjas(
 getOneNinja(
     @Param('id') id: string
 ) {
-  return {
-    id,
-  }
+  return this.ninjasService.getNinja(+id);
 }
 
 @Post(':id')
 createNinja(
    @Body() createNinjaDto: CreateNinjaDto
 ) {
-  return {
-    name: createNinjaDto.name,
-  };
+  return this.ninjasService.createNinja(createNinjaDto);
 }
 
 @Put(':id')
 updateNinja(
     @Param('id') id: string, @Body() UpdateNinjaDto: UpdateNinjaDto
 ) {
-  return {
-    id,
-    name: UpdateNinjaDto.name,
-  };
+   return this.ninjasService.updateNinja(+id, UpdateNinjaDto);
 }
 
 @Delete(':id')
 removeNinja(
     @Param('id') id: string
 ) {
-    return {
-        id,
-    };
+   return this.ninjasService.removeNinja(+id);
 }
 
 }
