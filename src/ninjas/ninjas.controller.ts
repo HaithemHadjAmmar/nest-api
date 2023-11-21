@@ -3,15 +3,19 @@ import { CreateNinjaDto } from './dto/create-ninja.dto';
 import { UpdateNinjaDto } from './dto/update-ninja.dto';
 import { NinjasService } from './ninjas.service';
 
+// const service = new NinjasService();
+// const controller = new NinjasController(service);
+
 @Controller('ninjas')
 export class NinjasController {
+    constructor(private readonly ninjasService: NinjasService) {}
 
 @Get()
 getNinjas(
     @Query('weapon') weapon: 'stars' | 'nunchucks'
 ) {
-    const service = new NinjasService();
-    return service.getNinjas(weapon);
+   
+    return this.ninjasService.getNinjas(weapon);
 }
 
 @Get(':id')
